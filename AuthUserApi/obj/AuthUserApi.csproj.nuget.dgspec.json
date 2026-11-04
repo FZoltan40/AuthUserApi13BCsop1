@@ -57,6 +57,16 @@
               "target": "Package",
               "version": "[10.0.12, )"
             },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.14, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[10.0.12, )"
+            },
             "Scalar.AspNetCore": {
               "target": "Package",
               "version": "[2.18.7, )"
