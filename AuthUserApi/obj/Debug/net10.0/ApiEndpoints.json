@@ -121,6 +121,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthUserApi.Controllers.UserRoleController",
+    "Method": "UserByIdAndRoles",
+    "RelativePath": "userrole/userByIdAndRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthUserApi.Controllers.UsersController",
     "Method": "AllUser",
     "RelativePath": "users/allUser",
