@@ -79,6 +79,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthUserApi.Controllers.UserRoleController",
+    "Method": "AssignRole",
+    "RelativePath": "userrole/assignRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newUserRoleDto",
+        "Type": "AuthUserApi.Models.DTOs.NewUserRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthUserApi.Controllers.UsersController",
     "Method": "AllUser",
     "RelativePath": "users/allUser",
@@ -86,27 +102,6 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AuthUserApi.Controllers.UsersController",
-    "Method": "AssignRole",
-    "RelativePath": "users/assign-role",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "userId",
-        "Type": "System.Guid",
-        "IsRequired": false
-      },
-      {
-        "Name": "roleID",
-        "Type": "System.Guid",
-        "IsRequired": false
-      }
-    ],
     "ReturnTypes": []
   },
   {

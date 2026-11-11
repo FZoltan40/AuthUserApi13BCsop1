@@ -143,6 +143,38 @@
         }
       }
     },
+    "/userrole/assignRole": {
+      "post": {
+        "tags": [
+          "UserRole"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRoleDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRoleDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewUserRoleDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/users/newUser": {
       "post": {
         "tags": [
@@ -272,36 +304,6 @@
           }
         }
       }
-    },
-    "/users/assign-role": {
-      "post": {
-        "tags": [
-          "Users"
-        ],
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "roleID",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
     }
   },
   "components": {
@@ -337,6 +339,19 @@
               "null",
               "string"
             ]
+          }
+        }
+      },
+      "NewUserRoleDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
           }
         }
       },
@@ -379,6 +394,9 @@
   "tags": [
     {
       "name": "Roles"
+    },
+    {
+      "name": "UserRole"
     },
     {
       "name": "Users"

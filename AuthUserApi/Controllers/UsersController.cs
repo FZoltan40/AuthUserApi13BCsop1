@@ -102,39 +102,5 @@ namespace AuthUserApi.Controllers
 
         }
 
-        [HttpPost("assign-role")]
-        public async Task<IActionResult> AssignRole([FromQuery] Guid userId, [FromQuery]Guid roleID)
-        {
-            var user = await _context.Users.Include(u => u.Roles).FirstOrDefaultAsync(u => u.Id == userId);
-            var role = await _context.Roles.FindAsync(roleID);
-
-            if (user is null || role is null)
-            {
-                return StatusCode(204, new { message = "Nincs user vagy szerepkör"});
-            }
-
-            user.Roles.Add(role);
-            await _context.SaveChangesAsync();
-
-            return StatusCode(201, new { message = "Felvéve", result = role });
-        }
-
-       
-        [HttpPost("userandroles")]
-        public async Task<ActionResult<IActionResult>> UserAndRoles([FromQuery] Guid userId)
-        {
-            var uid = userId.ToString();   // szöveggé alakítva hasonlítjuk az Id oszlophoz
-
-            var result = await _context.Users
-                .AsNoTracking()
-                .Where(u => u.Id == uid)
-                .Select(u => new (
-                    u.Id,
-                    u.Name,
-                    u.Roles.Select(r => r.Name).ToList()))   // az EF JOIN-t generál a UserRole és Roles táblákra
-                .FirstOrDefaultAsync();
-
-            return result is null ? NotFound("A felhasználó nem található.") : result;
-        }
     }
 }
