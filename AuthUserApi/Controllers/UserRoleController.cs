@@ -83,5 +83,21 @@ namespace AuthUserApi.Controllers
             }
 
         }
+
+        [HttpGet("allUsersAllRoles)")]
+        public async Task<IActionResult> AllUsersAllRoles()
+        {
+            var users = await _context.Users
+                .Include(u => u.Roles)
+                .Select(u => new
+                {
+                    Users = u.Name,
+                    UserRoles = u.Roles
+                   
+                })
+                .ToListAsync();
+
+            return Ok(users);
+        }
     }
 }

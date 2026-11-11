@@ -80,6 +80,16 @@
   },
   {
     "ContainingType": "AuthUserApi.Controllers.UserRoleController",
+    "Method": "AllUsersAllRoles",
+    "RelativePath": "userrole/allUsersAllRoles)",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.UserRoleController",
     "Method": "AssignRole",
     "RelativePath": "userrole/assignRole",
     "HttpMethod": "POST",

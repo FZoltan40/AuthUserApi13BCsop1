@@ -207,6 +207,18 @@
         }
       }
     },
+    "/userrole/allUsersAllRoles)": {
+      "get": {
+        "tags": [
+          "UserRole"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/users/newUser": {
       "post": {
         "tags": [
