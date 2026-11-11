@@ -49,5 +49,39 @@ namespace AuthUserApi.Controllers
                 return BadRequest(exception.Message);
             }
         }
+
+        [HttpDelete("deleteRole")]
+        public async Task<IActionResult> DeleteRole([FromBody] DeleteUserRoleDto deleteUserRoleDto)
+        {
+            try
+            {
+                var user = await _context.Users.Include(u => u.Roles)
+                              .FirstOrDefaultAsync(u => u.Id == deleteUserRoleDto.UserId);
+
+                var role = await _context.Roles.FindAsync(deleteUserRoleDto.RoleId);
+
+                if (user is null || role is null)
+                {
+                    return NotFound(new { message = "Hibás user vagy role Id" });
+                }
+
+                bool isCreated = user.Roles.Any(r => r.Id == deleteUserRoleDto.RoleId);
+
+                if (!isCreated)
+                {
+                    return Conflict(new { message = "Ilyen szerepköre már nincs a usernek" });
+                }
+
+                user.Roles.Remove(role);
+                await _context.SaveChangesAsync();
+
+                return StatusCode(200, new { message = "Sikeres törlés" });
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
+
+        }
     }
 }

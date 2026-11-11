@@ -95,6 +95,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "AuthUserApi.Controllers.UserRoleController",
+    "Method": "DeleteRole",
+    "RelativePath": "userrole/deleteRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "deleteUserRoleDto",
+        "Type": "AuthUserApi.Models.DTOs.DeleteUserRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthUserApi.Controllers.UsersController",
     "Method": "AllUser",
     "RelativePath": "users/allUser",
