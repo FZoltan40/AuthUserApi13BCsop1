@@ -1,5 +1,84 @@
 [
   {
+    "ContainingType": "AuthUserApi.Controllers.RolesController",
+    "Method": "AllRole",
+    "RelativePath": "roles/allRole",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.RolesController",
+    "Method": "RoleById",
+    "RelativePath": "roles/byId",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.RolesController",
+    "Method": "DeleteUser",
+    "RelativePath": "roles/deleteRole",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.RolesController",
+    "Method": "NewRole",
+    "RelativePath": "roles/newRole",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "newRoleDto",
+        "Type": "AuthUserApi.Models.DTOs.NewRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.RolesController",
+    "Method": "UpdateUser",
+    "RelativePath": "roles/updateRole",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "updateRoleDto",
+        "Type": "AuthUserApi.Models.DTOs.UpdateRoleDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "AuthUserApi.Controllers.UsersController",
     "Method": "AllUser",
     "RelativePath": "users/allUser",
@@ -7,6 +86,27 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthUserApi.Controllers.UsersController",
+    "Method": "AssignRole",
+    "RelativePath": "users/assign-role",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Guid",
+        "IsRequired": false
+      },
+      {
+        "Name": "roleID",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
     "ReturnTypes": []
   },
   {
