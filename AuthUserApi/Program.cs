@@ -23,7 +23,7 @@ namespace AuthUserApi
             builder.Services.AddScoped<GenerateToken>();
 
             var secret = "ide-jon-az-a-kulcs-amivel-azonositjuk-issuer-es-a-audience";
-            var issuer = "auh-api";
+            var issuer = "auth-api";
             var audience = "auth-client";
 
             var key = Encoding.ASCII.GetBytes(secret);
@@ -62,6 +62,7 @@ namespace AuthUserApi
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
 

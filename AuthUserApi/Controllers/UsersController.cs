@@ -50,6 +50,7 @@ namespace AuthUserApi.Controllers
             return StatusCode(400, new { message = "Hiba", result = user });
         }
 
+        
         [HttpGet("allUser")]
         public async Task<IActionResult> AllUser()
         {
