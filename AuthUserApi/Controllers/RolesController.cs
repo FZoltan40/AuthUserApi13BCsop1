@@ -24,6 +24,7 @@ namespace AuthUserApi.Controllers
             {
                 Id = Guid.NewGuid(),
                 Name = newRoleDto.Name,
+                RegTime = DateTime.Now,
               
             };
 

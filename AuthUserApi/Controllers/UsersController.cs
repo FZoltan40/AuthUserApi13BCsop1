@@ -31,7 +31,8 @@ namespace AuthUserApi.Controllers
                 Name = newUserDto.Name,
                 Email = newUserDto.Email,
                 Password = pass,
-                Salt = salt
+                Salt = salt,
+                RegTime = DateTime.Now
             };
 
             if (user is not null)
