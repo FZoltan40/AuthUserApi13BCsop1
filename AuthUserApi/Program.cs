@@ -17,6 +17,7 @@ namespace AuthUserApi
             );
 
             builder.Services.AddScoped<PasswordHasher>();
+            builder.Services.AddScoped<GenerateToken>();
 
 
             // Add services to the container.
