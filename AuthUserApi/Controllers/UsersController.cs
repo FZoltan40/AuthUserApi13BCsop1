@@ -10,7 +10,7 @@ namespace AuthUserApi.Controllers
 {
     [Route("users")]
     [ApiController]
-    [Authorize]
+   
     public class UsersController : ControllerBase
     {
         private readonly AuthuserContext _context;
@@ -50,7 +50,7 @@ namespace AuthUserApi.Controllers
             return StatusCode(400, new { message = "Hiba", result = user });
         }
 
-        
+        [Authorize]
         [HttpGet("allUser")]
         public async Task<IActionResult> AllUser()
         {
@@ -117,7 +117,8 @@ namespace AuthUserApi.Controllers
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] UserLoginDto userLoginDto)
         {
-            var login = await _context.Users.SingleOrDefaultAsync(u => u.Name == userLoginDto.Name);
+            var login = await _context.Users.Include(u => u.Roles) 
+                .SingleOrDefaultAsync(u => u.Name == userLoginDto.Name);
 
             if (login is null)
             {
