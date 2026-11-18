@@ -123,6 +123,7 @@ namespace AuthUserApi.Controllers
 
             if (isValid)
             {
+
                 return StatusCode(200, new { message = "Sikeres bejelentkezés", result = login });
             }
 
