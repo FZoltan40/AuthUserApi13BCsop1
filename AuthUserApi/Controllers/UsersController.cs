@@ -1,6 +1,7 @@
 ﻿using AuthUserApi.Models;
 using AuthUserApi.Models.DTOs;
 using AuthUserApi.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ namespace AuthUserApi.Controllers
 {
     [Route("users")]
     [ApiController]
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly AuthuserContext _context;
